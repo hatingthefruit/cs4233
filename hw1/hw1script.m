@@ -51,9 +51,16 @@ disp(orf_neg);
 %%
 
 % providde your code to analyze amino acid distribution and codon usage in the longest ORF
+longest_ORF = dna(orf_pos(1):orf_pos(2));
+aminos = aacount(nt2aa(longest_ORF))
 
+codonbias(longest_ORF, 'Pie', true)
 
+longest_ORF_right = dna(orf_pos(1)+1:orf_pos(2)+1);
+codonbias(longest_ORF_right, 'Pie', true)
 
+longest_ORF_left = dna(orf_pos(1)-1:orf_pos(2)-1);
+codonbias(longest_ORF_left, 'Pie', true)
 
 
 %% in-script function to calc the frequency of ACGT.

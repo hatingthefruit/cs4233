@@ -10,8 +10,8 @@ function orf = findLongestORF(strand)
     stops = findStopCodon(strand);
     mod_starts = [];
     mod_stops = [];
-    mod_starts = {starts(mod(starts, 3) == 0);starts(mod(starts, 3) == 1);starts(mod(starts, 3) == 2);}
-    mod_stops = {stops(mod(stops, 3) == 0);stops(mod(stops, 3) == 1);stops(mod(stops, 3) == 2);}
+    mod_starts = {starts(mod(starts, 3) == 0);starts(mod(starts, 3) == 1);starts(mod(starts, 3) == 2);};
+    mod_stops = {stops(mod(stops, 3) == 0);stops(mod(stops, 3) == 1);stops(mod(stops, 3) == 2);};
     for ix = 1:3
         for st = 1: length(mod_starts{ix})
             sp = find(mod_stops{ix} > mod_starts{ix}(st), 1);
